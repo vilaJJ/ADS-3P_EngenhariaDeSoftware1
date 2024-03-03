@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prints/src/features/main/controllers/main_controller.dart';
+import 'package:prints/src/features/splash/pages/splash_page.dart';
 import 'package:provider/provider.dart';
 
 class AppWidget extends StatefulWidget {
@@ -12,14 +14,15 @@ class _AppWidgetState extends State<AppWidget> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: const[
-
-        ],
-        child: MaterialApp(
-          title: "Prints",
-          theme: ThemeData.dark(useMaterial3: true),
-          initialRoute: '/'
-        ),
-      );
+      providers: [
+        ChangeNotifierProvider(create: (context) => MainController())
+      ],
+      child: MaterialApp(
+        title: "Prints",
+        theme: ThemeData.dark(useMaterial3: true),
+        initialRoute: '/',
+        routes: {'/': (context) => const SplashPage()},
+      ),
+    );
   }
 }
