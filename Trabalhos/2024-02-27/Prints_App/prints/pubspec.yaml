@@ -25,6 +25,16 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/app_icon.png
+    - assets/feed/late_registration.jpg
+    - assets/feed/wish_you_were_here.jpg
+    - assets/feed/flamengo_libertadores.jpg
+    - assets/feed/obanai_iguro.jpg
+    - assets/feed/twice.png
+    - assets/users/metro_boomin.jpg
+    - assets/users/old_kanye.jpg
+    - assets/users/flamengo.jpg
+    - assets/users/obanai_iguro.jpg
+    - assets/users/twice.jpg
 
 flutter_launcher_icons:
   android: "launcher_icon"

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:prints/src/features/account/pages/account_page.dart';
+import 'package:prints/src/features/feed/pages/feed_page.dart';
 import 'package:prints/src/features/main/controllers/main_controller.dart';
+import 'package:prints/src/features/new_post/pages/new_post_page.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
@@ -25,8 +28,14 @@ class _MainPageState extends State<MainPage> {
                   icon: const Icon(Icons.exit_to_app, color: Colors.white))
             ],
           ),
-          body: null,
+          body: PageView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: controller.pageController,
+            onPageChanged: controller.onPageChanged,
+            children: const [FeedPage(), NewPostPage(), AccountPage()],
+          ),
           bottomNavigationBar: BottomNavigationBar(
+            currentIndex: controller.indexPage,
             unselectedItemColor: Colors.grey,
             onTap: controller.onBottomBarItemTapped,
             backgroundColor: Colors.deepPurple,
