@@ -15,36 +15,39 @@ class FeedPage extends StatefulWidget {
 class _FeedPageState extends State<FeedPage> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<FeedController>(builder: (context, controller, child) {
-      return FutureBuilder<List<PostModel>>(
-        future: controller.getPosts(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircleProgressIndicator());
-          }
-          if (snapshot.hasError) {
-            return const Center(child: Text("Erro ao obter os Posts."));
-          }
-
-          var posts = snapshot.requireData;
-
-          if (posts.isEmpty) {
-            return const Center(child: Text("Sem postagens por hoje :)"));
-          }
-
-          return ListView.separated(
-            separatorBuilder: (context, index) => const Divider(
-              height: 25,
-              thickness: 0,
-              color: Colors.transparent,
-            ),
-            itemCount: posts.length,
-            itemBuilder: (context, index) => PostWidget(
-              post: posts[index],
-            ),
-          );
-        },
-      );
-    });
+    return Container(
+      color: Colors.white,
+      child: Consumer<FeedController>(builder: (context, controller, child) {
+        return FutureBuilder<List<PostModel>>(
+          future: controller.getPosts(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircleProgressIndicator());
+            }
+            if (snapshot.hasError) {
+              return const Center(child: Text("Erro ao obter os Posts."));
+            }
+      
+            var posts = snapshot.requireData;
+      
+            if (posts.isEmpty) {
+              return const Center(child: Text("Sem postagens por hoje :)"));
+            }
+      
+            return ListView.separated(
+              separatorBuilder: (context, index) => const Divider(
+                height: 0,
+                thickness: 0,
+                color: Colors.black,
+              ),
+              itemCount: posts.length,
+              itemBuilder: (context, index) => PostWidget(
+                post: posts[index],
+              ),
+            );
+          },
+        );
+      }),
+    );
   }
 }

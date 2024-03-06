@@ -10,8 +10,11 @@ class NewPostPage extends StatefulWidget {
 class _NewPostPageState extends State<NewPostPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Tela para realizar uma postagem"),
+    return Container(
+      color: Colors.white,
+      child: const Center(
+        child: Text("Tela para realizar uma postagem", style: TextStyle(color: Colors.black)),
+      ),
     );
   }
 }

@@ -11,7 +11,7 @@ class ImagePostComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: ScreenSize(context).width(),
-      height: ScreenSize(context).height(percentual: 0.4),
+      height: ScreenSize(context).height(percentual: 0.45),
       child: Image.asset(
         post.imagePath,
         fit: BoxFit.cover,

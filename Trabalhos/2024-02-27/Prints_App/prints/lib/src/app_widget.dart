@@ -26,7 +26,11 @@ class _AppWidgetState extends State<AppWidget> {
       ],
       child: MaterialApp(
         title: "Prints",
-        theme: ThemeData.dark(useMaterial3: true),
+        theme: ThemeData.dark(
+          useMaterial3: true
+          ).copyWith(
+            primaryColor: const Color.fromRGBO(150, 42, 255, 100)
+            ),
         initialRoute: '/',
         routes: {
           '/': (context) => const SplashPage(),

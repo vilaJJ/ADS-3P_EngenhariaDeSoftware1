@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:prints/src/shared/device/screen_size.dart';
-import 'package:prints/src/shared/widgets/post/components/account_post_header_component.dart';
 import 'package:prints/src/shared/widgets/post/components/bottom_post_component.dart';
 import 'package:prints/src/shared/widgets/post/components/image_post_component.dart';
 import 'package:prints/src/shared/widgets/post/controllers/post_controller.dart';
@@ -20,10 +19,7 @@ class PostWidget extends StatelessWidget {
         height: ScreenSize(context).height(percentual: 0.5),
         child: Column(
           children: [
-            // 5% de 50%
-            AccountPostHeaderComponent(post: post),
-
-            // 40% de 50%
+            // 45% de 50%
             ImagePostComponent(post: post),
 
             // 5% de 50%

@@ -20,16 +20,9 @@ class BottomPostComponent extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                const Icon(
-                  Icons.file_download_done_rounded,
-                  color: Colors.white38,
-                ),
-                Text('${post.downloadsCount}'),
-              ],
-            ),
+            Text(post.account.username, style: const TextStyle(color: Colors.black)),
             IconButton(
               color: Colors.purple,
               onPressed: () {},

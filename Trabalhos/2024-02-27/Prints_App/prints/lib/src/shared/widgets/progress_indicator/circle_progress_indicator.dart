@@ -5,6 +5,6 @@ class CircleProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CircularProgressIndicator(strokeWidth: 0.75);
+    return const CircularProgressIndicator(strokeWidth: 5.0);
   }
 }
