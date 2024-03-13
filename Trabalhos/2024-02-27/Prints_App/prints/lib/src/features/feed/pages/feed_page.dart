@@ -35,6 +35,7 @@ class _FeedPageState extends State<FeedPage> {
             }
       
             return ListView.separated(
+              shrinkWrap: true,
               separatorBuilder: (context, index) => const Divider(
                 height: 0,
                 thickness: 0,
