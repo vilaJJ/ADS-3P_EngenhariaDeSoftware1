@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:prints/src/shared/device/screen_size.dart';
 import 'package:prints/src/shared/widgets/post/components/bottom_post_component.dart';
 import 'package:prints/src/shared/widgets/post/components/image_post_component.dart';
@@ -8,8 +9,9 @@ import 'package:provider/provider.dart';
 
 class PostWidget extends StatelessWidget {
   final PostModel post;
+  final bool showFooter;
 
-  const PostWidget({super.key, required this.post});
+  const PostWidget({super.key, required this.post, this.showFooter = true});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,10 @@ class PostWidget extends StatelessWidget {
             ImagePostComponent(post: post),
 
             // 5% de 50%
-            BottomPostComponent(post: post)
+            Visibility(
+              visible: showFooter,
+              child: BottomPostComponent(post: post)
+            )
           ],
         ),
       );

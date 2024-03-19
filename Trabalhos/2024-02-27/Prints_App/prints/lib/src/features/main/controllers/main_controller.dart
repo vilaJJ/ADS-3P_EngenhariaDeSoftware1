@@ -30,7 +30,7 @@ class MainController extends ChangeNotifier {
       }
 
       controller.forward();
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 1));
       controller.reverse();
     }
     else {

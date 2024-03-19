@@ -29,8 +29,8 @@ class _AppWidgetState extends State<AppWidget> {
         theme: ThemeData.dark(
           useMaterial3: true
           ).copyWith(
-            primaryColor: const Color.fromRGBO(150, 42, 255, 100)
-            ),
+            primaryColor: const Color.fromRGBO(150, 42, 255, 100),
+          ),
         initialRoute: '/',
         routes: {
           '/': (context) => const SplashPage(),
